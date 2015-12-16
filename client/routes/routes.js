@@ -24,9 +24,9 @@ Router.map(function () {
         onAfterAction: function () {
             // this is run after our action function
             if (Meteor.user()) {
-                console.log('Email of logged in user is ' + JSON.stringify(Meteor.user().emails));
-                if(Meteor.user().email === 'iagu@central1.com') {
-                    this.render('Orders');
+                console.log('Email of logged in user is ' + JSON.stringify(Meteor.user().emails[0].address));
+                if(Meteor.user().emails[0].address === 'iagu@central1.com') {
+                    this.render('ViewPendingOrders');
                 } else {
                     this.render('HomePage');
                 }
@@ -37,4 +37,12 @@ Router.map(function () {
 
 Router.route('/orders', function () {
     this.render('Orders');
+});
+
+Router.route('/pendingOrders', function () {
+    this.render('ViewPendingOrders');
+});
+
+Router.route('/allOrders', function () {
+    this.render('ViewAllOrders');
 });
