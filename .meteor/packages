@@ -25,3 +25,4 @@ useraccounts:core
 useraccounts:bootstrap
 accounts-password
 twbs:bootstrap
+email

@@ -24,7 +24,12 @@ Router.map(function () {
         onAfterAction: function () {
             // this is run after our action function
             if (Meteor.user()) {
-                this.render('HomePage');
+                console.log('Email of logged in user is ' + JSON.stringify(Meteor.user().emails));
+                if(Meteor.user().email === 'iagu@central1.com') {
+                    this.render('Orders');
+                } else {
+                    this.render('HomePage');
+                }
             }
         }
     });
