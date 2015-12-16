@@ -1,0 +1,9 @@
+/* CSS declarations go here */
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}

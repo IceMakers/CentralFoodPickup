@@ -1,0 +1,8 @@
+meteor add mrgalaxy:stripe
+meteor add iron:router
+meteor add twbs:bootstrap
+meteor add browser-policy
+meteor add jquery
+meteor add accounts-password
+meteor add useraccounts:core
+meteor add useraccounts:bootstrap
