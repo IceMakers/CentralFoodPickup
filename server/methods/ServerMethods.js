@@ -4,7 +4,7 @@ Meteor.methods({
 
         Stripe.charges.create({
             amount: 6000,
-            currency: 'usd',
+            currency: 'cad',
             source: stripeToken
         }, function(err, charge) {
             console.log(err, charge);

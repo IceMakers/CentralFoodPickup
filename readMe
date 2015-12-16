@@ -6,3 +6,4 @@ meteor add jquery
 meteor add accounts-password
 meteor add useraccounts:core
 meteor add useraccounts:bootstrap
+meteor add email
