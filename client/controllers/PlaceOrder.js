@@ -1,18 +1,13 @@
 Template.PlaceOrder.events({
-    'click button': function (e) {
+    'click a.btn': function (e) {
         e.preventDefault();
+        var pickuptime = $('#pickUpId').val();
+        var comments = $('#commentsId').val();
+        var orderId =  Math.floor(Math.pow(10, 5) + Math.random() * 9 * Math.pow(10, 5));
+        console.log(orderId);
+        Session.set('pickupdata', {pickuptime: pickuptime, comments: comments, orderId: orderId, email: Meteor.user().emails[0].address});
 
-        StripeCheckout.open({
-            key: 'pk_test_NC9qpZjq7Uoss14zHNMVXnUR',
-            amount: 6000, // this is equivalent to $50
-            name: 'Meteor Tutorial',
-            description: 'On how to use Stripe ($60.00)',
-            panelLabel: 'Pay Now',
-            token: function (res) {
-                stripeToken = res.id;
-                console.info(res);
-                Meteor.call('chargeCard', stripeToken);
-            }
-        });
+        Router.go('/confirmAndPay');
+
     }
 });

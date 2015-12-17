@@ -1,5 +1,8 @@
 Template.ViewPendingOrders.helpers({
-
+    orders: function() {
+            //console.log(Items.find({}));
+            return Orders.find({status : 'pending'});
+        }
 });
 
 Template.ViewPendingOrders.events({
@@ -11,6 +14,14 @@ Template.ViewPendingOrders.events({
 
     "click .btn-primary": function(event) {
         event.preventDefault();
+        var orderId = $(event.target).attr('orderId');
+        console.log('Orderid in ViewPendingOrder:'+orderId);
+        Orders.update(orderId, {status: 'ready'});
+        var orderDetails = Orders.find({_id:orderId });
+        var fromEmail = 'mkaur@central1.com';
+        var subject = 'OrderId -'+orderId+': Your food is ready for pickup!';
+        var text = "Hi,<br> Your food is ready for the pick up! <br> Regards, Central Food Pickup";
+        Meteor.call('sendEmail',orderDetails.email,fromEmail,subject,text);
 
         //console.log($(event.target).attr('class'));
         //update the order and set the appropriate status
@@ -33,3 +44,5 @@ Template.ViewPendingOrders.rendered=function() {
     $('.dataTables_paginate ul').addClass('pagination');
 
 }
+
+

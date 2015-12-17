@@ -1,2 +1,2 @@
 Orders = new Mongo.Collection('orders');
-Products = new Mongo.Collection('products');
+Items = new Mongo.Collection('items');

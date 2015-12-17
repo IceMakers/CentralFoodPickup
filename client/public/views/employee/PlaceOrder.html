@@ -1,10 +1,10 @@
 <template name="PlaceOrder">
     <label for="pickUp" >Pick Up Time</label>
-    <input name="pickUp" type="time" class="form-control"/>
-    <label for="comments" >Comments</label>
-    <textarea class="form-control" name="comments" > </textarea>
-    <div class="floatRight">
-        <a href="/confirmAndPay" class="btn btn-default" >
+    <input min="11:00:00" max="14:00:00" name="pickUp" type="time" class="form-control" id="pickUpId" value="12:00:00"/>
+    <label for="comments">Comments</label>
+    <textarea class="form-control" name="comments" id="commentsId"> </textarea>
+    <div class="floatRight"><br>
+        <a href="#" class="btn btn-default" >
             Next
         </a>
     </div>

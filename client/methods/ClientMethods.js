@@ -1,17 +1,17 @@
 Meteor.methods({
-    deleteOrder: function(orderId) {
-        
-    },
-    addOrder: function(orderObject) {
+    'deleteOrder': function (orderId) {
 
     },
-    updateOrder: function(orderObject){
+    'addOrder': function (orderObject) {
 
     },
-    getOrder: function(orderId) {
+    'updateOrder': function (orderObject) {
 
     },
-    getOrders: function() {
+    'getOrder': function (orderId) {
+
+    },
+    'getOrders': function () {
 
     }
 });

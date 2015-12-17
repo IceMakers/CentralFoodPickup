@@ -9,22 +9,25 @@
 
             </tr>
             </thead>
+            {{#each OrderedItems }}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{displayprice}}</td>
+                </tr>
+            {{/each}}
             <tr>
-                <td>Roast beef sandwich with fries</td>
-                <td>$7.95</td>
-
+                <td>Tax</td>
+                <td>{{tax}}</td>
             </tr>
             <tr>
-                <td>Roast chicken sandwich with fries and a drink</td>
-                <td>$10.95</td>
-            </tr>
-            <tr>
-                <td><br><b>Total Price</b></td>
-                <td><b>$18.90</b></td>
+                <td><b>Total Price</b></td>
+                <td><b>{{total}}</b></td>
             </tr>
             <tr>
                 <td></td>
-                <td><br><button class="btn btn-default"> Pay </button></td>
+                <td><br>
+                    <button class="btn btn-default"> Pay</button>
+                </td>
             </tr>
         </table>
     </div>

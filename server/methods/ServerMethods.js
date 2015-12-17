@@ -1,16 +1,38 @@
 Meteor.methods({
-    'chargeCard': function(stripeToken) {
+    'chargeCard': function(stripeToken, amount, items, timeInfo) {
         var Stripe = StripeAPI(Meteor.settings.private.stripe.testSecretKey);
 
         Stripe.charges.create({
-            amount: 6000,
+            amount: amount,
             currency: 'cad',
             source: stripeToken
         }, function(err, charge) {
-            console.log(err, charge);
+            if(err) {
+                console.log(err);
+            } else {
+               console.log(charge);
+                console.log('items:' + JSON.stringify(items));
+                console.log('timeInfo:' + JSON.stringify(timeInfo));
+
+            }
         });
+        var order = {};
+        order.pickuptime = timeInfo.pickuptime;
+        order.comments = [timeInfo.comments];
+        order.price = (Number(amount)/100).toFixed(2);
+        order.orderId = timeInfo.orderId;
+        order.email = timeInfo.email;
+        order.orderDate = new Date();
+        var itemArray = [];
+        items.forEach(function(item){
+            itemArray.push(item.name);
+        });
+        order.description = itemArray.join(', ');
+        order.status = 'pending';
+        //Session.set('order',order);
+        Orders.insert(order);
     },
-    sendEmail: function (to, from, subject, text) {
+    'sendEmail': function (to, from, subject, text) {
         check([to, from, subject, text], [String]);
 
         // Let other method calls from the same client start running,
@@ -23,5 +45,8 @@ Meteor.methods({
             subject: subject,
             text: text
         });
+    },
+    'getMenuData': function() {
+        return JSON.parse(Assets.getText('Menu.json'));
     }
 });

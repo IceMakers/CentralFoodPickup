@@ -12,39 +12,19 @@
                 </tr>
             </thead>
             <tbody>
+            {{#each orders }}
                 <tr>
-                    <td>00001</td>
-                    <td>Roast beef sandwich with fries</td>
-                    <td>$7.95</td>
-                    <td>12:45 pm</td>
+                    <td>{{orderId}}</td>
+                    <td>{{description}}</td>
+                    <td>$ {{price}}</td>
+                    <td>{{pickuptime}}</td>
                     <td>
-                        <button class="btn btn-xs btn-primary">Mark As Ready</button>
-                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
-                        <button class="btn btn-xs btn-danger">Cancel</button>
+                        <button class="btn btn-xs btn-primary" orderId='{{_id}}'>Mark As Ready</button>
+                        <button class="btn btn-xs btn-warning" orderId='{{_id}}'>View/Add Comment</button>
+                        <button class="btn btn-xs btn-danger" orderId='{{_id}}'>Cancel</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>00002</td>
-                    <td>Roast chicken sandwich with fries and a drink</td>
-                    <td>$10.95</td>
-                    <td>1:00 pm</td>
-                    <td>
-                        <button class="btn btn-xs btn-primary">Mark As Ready</button>
-                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
-                        <button class="btn btn-xs btn-danger">Cancel</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>00003</td>
-                    <td>Mashed Potatoes with turkey meat</td>
-                    <td>$13.15</td>
-                    <td>12:00 pm</td>
-                    <td>
-                        <button class="btn btn-xs btn-primary">Mark As Ready</button>
-                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
-                        <button class="btn btn-xs btn-danger">Cancel</button>
-                    </td>
-                </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>

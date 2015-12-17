@@ -1,0 +1,114 @@
+[
+    {
+      "name": "Soup and Sandwich",
+      "price": {
+        "cents": 725,
+        "cad": "$7.25"
+      },
+      "special": {
+        "specialOn": 1,
+        "specialCad": "$6",
+        "specialCents": 600
+      },
+      "type": "sandwich"
+    },
+    {
+      "name": "Turkey Sandwich",
+      "price": {
+        "cents": 549,
+        "cad": "$5.49"
+      },
+      "special": {},
+      "type": "sandwich"
+    },
+    {
+      "name": "Chicken Salad Sandwich",
+      "price": {
+        "cents": 549,
+        "cad": "$5.49"
+      },
+      "special": {},
+      "type": "sandwich"
+    },
+    {
+      "name": "Tuna Salad Sandwich",
+      "price": {
+        "cents": 549,
+        "cad": "$5.49"
+      },
+      "special": {},
+      "type": "sandwich"
+    },
+    {
+      "name": "Roast Beef Sandwich",
+      "price": {
+        "cents": 549,
+        "cad": "$5.49"
+      },
+      "special": {},
+      "type": "sandwich"
+    },
+    {
+      "name": "Ham Sandwich",
+      "price": {
+        "cents": 520,
+        "cad": "$5.20"
+      },
+      "special": {},
+      "type": "sandwich"
+    },
+    {
+      "name": "Egg Salad Sandwich",
+      "price": {
+        "cents": 470,
+        "cad": "$4.70"
+      },
+      "special": {},
+      "type": "sandwich"
+    },
+    {
+      "name": "Cheese",
+      "price": {
+        "cents": 85,
+        "cad": "$0.85"
+      },
+      "special": {},
+      "type": "sandwich addition"
+    },
+    {
+      "name": "Ham",
+      "price": {
+        "cents": 100,
+        "cad": "$1.00"
+      },
+      "special": {},
+      "type": "sandwich addition"
+    },
+    {
+      "name": "Bacon",
+      "price": {
+        "cents": 100,
+        "cad": "$1.00"
+      },
+      "special": {},
+      "type": "sandwich addition"
+    },
+    {
+      "name": "B.L.T",
+      "price": {
+        "cents": 100,
+        "cad": "$1.00"
+      },
+      "special": {},
+      "type": "fresh grille"
+    },
+    {
+      "name": "Grilled Cheese",
+      "price": {
+        "cents": 100,
+        "cad": "$1.00"
+      },
+      "special": {},
+      "type": "fresh grille"
+    }
+]
