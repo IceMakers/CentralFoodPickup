@@ -7,3 +7,12 @@
 .floatRight {
     float: right;
 }
+
+.logo img{
+    float: left;
+    padding-right: 10px;
+}
+
+.logo div {
+   height: 65px;
+}
