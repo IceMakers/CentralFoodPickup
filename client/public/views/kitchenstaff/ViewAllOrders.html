@@ -1,13 +1,14 @@
 <template name="ViewAllOrders">
     {{> KitchenStaffNavigation PageName="View All Orders"}}
     <div class="table-responsive">
-        <table class="table table-hover">
+        <table class="table table-hover" id="allOrders">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Description</th>
                     <th>Price</th>
                     <th>PickUp Time</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -17,10 +18,9 @@
                     <td>Roast beef sandwich with fries</td>
                     <td>$7.95</td>
                     <td>12:45 pm</td>
+                    <td>Pending</td>
                     <td>
-                        <button class="btn btn-sm btn-primary">Mark As Ready</button>
-                        <button class="btn btn-sm btn-warning">Add Comment</button>
-                        <button class="btn btn-sm btn-danger">Cancel</button>
+                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
                     </td>
                 </tr>
                 <tr>
@@ -28,10 +28,9 @@
                     <td>Roast chicken sandwich with fries and a drink</td>
                     <td>$10.95</td>
                     <td>1:00 pm</td>
+                    <td>Pending</td>
                     <td>
-                        <button class="btn btn-sm btn-primary">Mark As Ready</button>
-                        <button class="btn btn-sm btn-warning">Add Comment</button>
-                        <button class="btn btn-sm btn-danger">Cancel</button>
+                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
                     </td>
                 </tr>
                 <tr>
@@ -39,10 +38,9 @@
                     <td>Mashed Potatoes with turkey meat</td>
                     <td>$13.15</td>
                     <td>12:00 pm</td>
+                    <td>Completed</td>
                     <td>
-                        <button class="btn btn-sm btn-primary">Mark As Ready</button>
-                        <button class="btn btn-sm btn-warning">Add Comment</button>
-                        <button class="btn btn-sm btn-danger">Cancel</button>
+                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
                     </td>
                 </tr>
             </tbody>

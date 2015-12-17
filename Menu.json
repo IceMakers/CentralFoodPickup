@@ -1,0 +1,148 @@
+{
+	"Special":[{
+			"Special":"Special 1",
+			"Price":"7.25"
+		},{
+		
+		},{
+			"Special":"Soup and Sandwich",
+			"Price":"6.50"
+		}	
+	],	
+	
+	"sandwich": [{
+			"sandwich": "Turkey Sandwich",
+			"Price": "5.49"
+		}, {
+			"sandwich": "Chicken Salad Sandwich",
+			"Price": "5.49"
+		}, {
+			"sandwich": "Tuna Salad Sandwich",
+			"Price": "5.49"
+		}, {
+			"sandwich": "Roast Beef Sandwich",
+			"Price": "5.49"
+		}, {
+			"sandwich": "Ham Sandwich",
+			"Price": "5.20"
+		}, {
+			"sandwich": "Egg Salad Sandwich",
+			"Price": "4.70"
+		}
+
+
+	],
+	"sandwich addition": [{
+			"addition": "cheese",
+			"Price": "0.85"
+		}, {
+			"addition": "ham",
+			"Price": "1.00"
+
+		}, {
+			"addition": "bacon",
+			"Price": "1.00"
+		}
+
+
+	],
+	"fresh grille": [{
+			"grille": "B.L.T",
+			"Price": "5.10"
+		}, {
+			"grille": "Grilled Cheese",
+			"Price": "4.75"
+		},{
+			"sandwich":"Grille Cheese w/Ham ",
+			"Price": "5.75"
+		},{
+			"sandwich":"Grille cheese w/Bacon ",
+			"Price": "5.75"
+		},{
+			"sandwich":"Hamburger ",
+			"Price": "5.40"
+		},{
+			"sandwich":"Cheese Burger ",
+			"Price": "5.95"
+		},{
+			"sandwich":"Bacon Cheese Burger ",
+			"Price": "6.80"
+		},{
+			"sandwich":"Patty Melt",
+			"Price": "6.30"
+		},{
+			"sandwich":"Veggie Burger",
+			"Price": "5.30"
+		},{
+			"sandwich":"Club House Sandwich",
+			"Price": "6.85"
+		},{
+			"sandwich":"French Fries",
+			"Price": "2.54"
+		}
+	
+	],
+	"grilled addition" : [{
+			"addition": "cheese",
+			"Price": "0.55"
+		}, {
+			"addition": "ham",
+			"Price": "0.85"
+
+		}, {
+			"addition": "bacon",
+			"Price": "0.85"
+		}
+	],
+	"salad" : [{
+			"salad":"Chicken Salad",
+			"Price": "6.75"
+		},{
+			"salad":"Mexican Chicken Salad",
+			"Price": "6.95"
+		},{
+			"salad":"Special Salad",
+			"Price": "6.95"
+		}
+	],	
+	"drinks" : [{
+			"drinks":"coffee 12 oz",
+			"Price": "1.85"
+			
+		},{
+			"drinks":"coffee 16 oz",
+			"Price": "2.06"
+		},{
+			"drinks":"Tea",
+			"Price": "1.35"
+		},{
+			"drinks":"Herbal Tea",
+			"Price": "1.95"
+		},{
+			"drinks":"Pop 591ml",
+			"Price": "2.20"
+		},{
+			"drinks":"Water 591ml",
+			"Price": "2.20"
+		},{
+			"drinks":"Other",
+			"Price": "2.20"
+		
+		}
+		
+	],
+	"candy" : [{
+			"candy":"chips",
+			"Price": "1.50"
+		},{
+			"candy":"chocolate bar",
+			"Price": "1.50"
+		},{
+			"candy":"gum",
+			"Price": "1.50"
+		}
+	]			
+
+	
+
+}

@@ -27,3 +27,5 @@ accounts-password
 twbs:bootstrap
 email
 peppelg:bootstrap-3-modal
+hinas:meteor-bootstrap-confirmation
+mrt:datatables

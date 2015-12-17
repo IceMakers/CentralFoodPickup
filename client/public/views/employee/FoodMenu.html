@@ -1,0 +1,48 @@
+<template name="FoodMenu">
+    {{> EmployeeNavigation PageName="Food Menu"}}
+    <div class="table-responsive">
+        <table class="table table-hover" id="foodMenu">
+            <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Roast beef sandwich with fries</td>
+                <td>$7.95</td>
+                <td>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="item1"></label>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Roast chicken sandwich with fries and a drink</td>
+                <td>$10.95</td>
+                <td>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="item2"></label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Mashed Potatoes with turkey meat</td>
+                <td>$13.15</td>
+                <td>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="item3"></label>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="floatRight">
+            <a href="/pickUpTime" class="btn btn-default" >
+                Next
+            </a>
+        </div>
+    </div>
+</template>

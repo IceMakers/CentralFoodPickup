@@ -8,3 +8,4 @@ meteor add useraccounts:core
 meteor add useraccounts:bootstrap
 meteor add email
 meteor add peppelg:bootstrap-3-modal
+meteor add hinas:meteor-bootstrap-confirmation

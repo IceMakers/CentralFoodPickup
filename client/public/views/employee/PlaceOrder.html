@@ -1,3 +1,11 @@
 <template name="PlaceOrder">
-    <button>Pay with Stripe</button>
+    <label for="pickUp" >Pick Up Time</label>
+    <input name="pickUp" type="time" class="form-control"/>
+    <label for="comments" >Comments</label>
+    <textarea class="form-control" name="comments" > </textarea>
+    <div class="floatRight">
+        <a href="/confirmAndPay" class="btn btn-default" >
+            Next
+        </a>
+    </div>
 </template>
