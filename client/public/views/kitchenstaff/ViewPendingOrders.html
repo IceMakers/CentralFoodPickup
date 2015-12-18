@@ -8,6 +8,7 @@
                     <th>Description</th>
                     <th>Price</th>
                     <th>PickUp Time</th>
+                    <th>Comments</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -18,9 +19,10 @@
                     <td>{{description}}</td>
                     <td>$ {{price}}</td>
                     <td>{{pickuptime}}</td>
+                    <td></td>
                     <td>
                         <button class="btn btn-xs btn-primary" orderId='{{_id}}'>Mark As Ready</button>
-                        <button class="btn btn-xs btn-warning" orderId='{{_id}}'>View/Add Comment</button>
+                        <!--<button class="btn btn-xs btn-warning" orderId='{{_id}}'>View/Add Comment</button>-->
                         <button class="btn btn-xs btn-danger" orderId='{{_id}}'>Cancel</button>
                     </td>
                 </tr>

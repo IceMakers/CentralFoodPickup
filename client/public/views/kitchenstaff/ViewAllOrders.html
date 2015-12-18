@@ -1,48 +1,32 @@
 <template name="ViewAllOrders">
     {{> KitchenStaffNavigation PageName="View All Orders"}}
     <div class="table-responsive">
-        <table class="table table-hover" id="allOrders">
+        <table class="table table-hover allOrders" id="allOrders">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>PickUp Time</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>PickUp Time</th>
+                <th>Comments</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
             </thead>
             <tbody>
+            {{#each orders}}
                 <tr>
-                    <td>00001</td>
-                    <td>Roast beef sandwich with fries</td>
-                    <td>$7.95</td>
-                    <td>12:45 pm</td>
-                    <td>Pending</td>
+                    <td>{{orderId}}</td>
+                    <td>{{description}}</td>
+                    <td>{{price}}</td>
+                    <td>{{pickuptime}}</td>
+                    <td>{{#each comments}} {{comment}} {{/each}}</td>
+                    <td>{{status}}</td>
                     <td>
-                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
+                        <button class="btn btn-xs btn-danger" orderId='{{_id}}'>Delete</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>00002</td>
-                    <td>Roast chicken sandwich with fries and a drink</td>
-                    <td>$10.95</td>
-                    <td>1:00 pm</td>
-                    <td>Pending</td>
-                    <td>
-                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>00003</td>
-                    <td>Mashed Potatoes with turkey meat</td>
-                    <td>$13.15</td>
-                    <td>12:00 pm</td>
-                    <td>Completed</td>
-                    <td>
-                        <button class="btn btn-xs btn-warning">View/Add Comment</button>
-                    </td>
-                </tr>
+            {{/each}}
             </tbody>
         </table>
     </div>

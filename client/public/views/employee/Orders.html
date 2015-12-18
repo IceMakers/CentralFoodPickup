@@ -1,0 +1,25 @@
+<template name="Orders">
+    {{> EmployeeNavigation PageName="My Orders"}}
+    <div class="table-responsive">
+        <table class="table table-condensed" id="myorders">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item(s)</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each orders}}
+                <tr>
+                    <td>{{orderId}}</td>
+                    <td>{{description}}</td>
+                    <td>{{price}}</td>
+                    <td>{{status}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

@@ -22,12 +22,10 @@ Template.ConfirmAndPay.helpers({
             total += Number(item.price);
         });
         console.log(total);
-        var totalPrice = (((total*0.13)+total)/100).toFixed(2);
+        var totalPrice = Number(((total*0.13)+total)/100).toFixed(2);
         Session.set('totalPricePaid',(totalPrice*100));
         return '$' + totalPrice;
     }
-
-
 });
 
 Template.ConfirmAndPay.events({

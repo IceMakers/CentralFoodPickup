@@ -1,48 +1,62 @@
 Template.ViewPendingOrders.helpers({
-    orders: function() {
-            //console.log(Items.find({}));
-            return Orders.find({status : 'pending'});
-        }
-});
+    orders: function () {
+        var start = moment().startOf('day')
+        var end = moment().endOf('day');
 
-Template.ViewPendingOrders.events({
-    "click .btn-warning": function(event) {
-        event.preventDefault();
-        Modal.show('AddViewComments');
-        //console.log($(event.target).attr('class'));
-    },
-
-    "click .btn-primary": function(event) {
-        event.preventDefault();
-        var orderId = $(event.target).attr('orderId');
-        console.log('Orderid in ViewPendingOrder:'+orderId);
-        Orders.update(orderId, {status: 'ready'});
-        var orderDetails = Orders.find({_id:orderId });
-        var fromEmail = 'mkaur@central1.com';
-        var subject = 'OrderId -'+orderId+': Your food is ready for pickup!';
-        var text = "Hi,<br> Your food is ready for the pick up! <br> Regards, Central Food Pickup";
-        Meteor.call('sendEmail',orderDetails.email,fromEmail,subject,text);
-
-        //console.log($(event.target).attr('class'));
-        //update the order and set the appropriate status
-        //send an email to the user saying the order is ready for pickup
+        return Orders.find({
+            status: 'pending', orderDate: {
+                $gte: start.toDate(),
+                $lte: end.toDate()
+            }
+        }, {sort: {orderDate: -1}});
     }
 });
 
-Template.ViewPendingOrders.rendered=function() {
-    this.$('.btn-danger').confirmation({
-        placement: 'bottom',
-        onConfirm: function(){
-            //get the id and call the appropriate delete method
-            console.log("delete confirmed");
-        }});
+Template.ViewPendingOrders.events({
+    "click .btn-warning": function (event) {
+        event.preventDefault();
+        var orderId = $(event.target).attr('orderId');
+        Session.set('modaLData', orderId);
+        Modal.show('AddViewComments', {orderId: orderId});
+        //console.log($(event.target).attr('class'));
+    },
+
+    "click .btn-danger": function (event) {
+        event.preventDefault();
+        //console.log($(event.target).attr('class'));
+        Session.set("noRender", true);
+        var orderId = $(event.target).attr('orderId');
+        Orders.remove({_id: orderId}, function () {
+
+        });
+    },
 
 
+    "click .btn-primary": function (event) {
+        event.preventDefault();
+        var orderId = $(event.target).attr('orderId');
+        //console.log('Orderid in ViewPendingOrder:' + orderId);
+
+        var orderDetails = Orders.findOne(orderId);
+        //console.log(orderDetails['email']);
+        var fromEmail = 'kitchenstaff@central1.com';
+        //console.log('the email to send it to is ' + orderDetails['email']);
+        var subject = 'Order - ' + orderDetails['orderId'] + ': Your food is ready for pickup!';
+        var text = "Hi,\n\n Your food is ready for the pick up! \n\n Regards, \nCentral Food Pickup";
+
+        Meteor.call('sendEmail', orderDetails['email'], fromEmail, subject, text);
+        Session.set("noRender", true);
+        Orders.update(orderId, {$set: {status: 'ready'}}, function () {
+        });
+        Router.go('/pendingOrders');
+    }
+});
+
+Template.ViewPendingOrders.rendered = function () {
     $('#pendingOrders').DataTable({
-        "bSort" : false
+        bSort: false, info: false, paging: false
     }).attr('class', '').addClass('table table-hover');
     $('.dataTables_paginate ul').addClass('pagination');
-
 }
 
 

@@ -56,9 +56,28 @@ Router.map(function () {
     });
 });
 
-Router.route('/orders', function () {
-    Meteor.call(Meteor.methods().isLoggedIn());
-    this.render('Orders');
+Router.map(function () {
+    this.route('ViewOrders', {
+        path: '/ViewOrders',
+        onBeforeAction: function (pause) {
+            if (!Meteor.user()) {
+                // render the login template but keep the url in the browser the same
+                this.render('LoginPage');
+                // pause the rest of the before hooks and the action function
+                pause();
+            }
+        },
+        action: function () {
+            // render the main template
+            this.render();
+        },
+        onAfterAction: function () {
+            // this is run after our action function
+            if (Meteor.user()) {
+                this.render('Orders');
+            }
+        }
+    });
 });
 
 Router.map(function () {

@@ -11,13 +11,9 @@ Meteor.startup(function () {
         if(err) {
             console.log(err);
         } else {
-            //console.log(data);
-            //Session.set('items', data);
-
             data.forEach(function(item) {
                 Items.insert(item);
             });
         }
     });
-
 });

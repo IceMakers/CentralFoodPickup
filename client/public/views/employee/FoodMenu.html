@@ -14,9 +14,7 @@
                     <td>{{name}}</td>
                     <td>{{price.cad}}</td>
                     <td>
-                        <div class="checkbox">
-                            <label><input itemprice="{{price.cents}}" itempricedisplay="{{price.cad}}" itemname="{{name}}" type="checkbox" value="{{_id}}"></label>
-                        </div>
+                            <input itemprice="{{price.cents}}" itempricedisplay="{{price.cad}}" itemname="{{name}}" type="checkbox" value="{{_id}}"/>
                     </td>
                 </tr>
             {{/each}}
