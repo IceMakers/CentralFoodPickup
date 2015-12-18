@@ -24,11 +24,14 @@ Template.ViewPendingOrders.events({
     "click .btn-danger": function (event) {
         event.preventDefault();
         //console.log($(event.target).attr('class'));
-        Session.set("noRender", true);
         var orderId = $(event.target).attr('orderId');
-        Orders.remove({_id: orderId}, function () {
-
-        });
+        Orders.remove({_id: orderId}, function () {});
+        var orderDetails = Orders.findOne(orderId);
+        var fromEmail = 'kitchenstaff@central1.com';
+        //console.log('the email to send it to is ' + orderDetails['email']);
+        var subject = 'Order - ' + orderDetails['orderId'] + ': Your food has been cancelled!';
+        var text = "Hi,\n\n Your food order has been cancelled. Please contact the kitchen staff for more details.\n\n Regards, \nCentral Food Pickup";
+        Meteor.call('sendEmail', orderDetails['email'], fromEmail, subject, text);
     },
 
 
@@ -45,7 +48,6 @@ Template.ViewPendingOrders.events({
         var text = "Hi,\n\n Your food is ready for the pick up! \n\n Regards, \nCentral Food Pickup";
 
         Meteor.call('sendEmail', orderDetails['email'], fromEmail, subject, text);
-        Session.set("noRender", true);
         Orders.update(orderId, {$set: {status: 'ready'}}, function () {
         });
         Router.go('/pendingOrders');

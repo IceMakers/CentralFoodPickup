@@ -19,7 +19,7 @@
                     <td>{{description}}</td>
                     <td>$ {{price}}</td>
                     <td>{{pickuptime}}</td>
-                    <td></td>
+                    <td>{{#each comments}} {{comment}} {{/each}}</td>
                     <td>
                         <button class="btn btn-xs btn-primary" orderId='{{_id}}'>Mark As Ready</button>
                         <!--<button class="btn btn-xs btn-warning" orderId='{{_id}}'>View/Add Comment</button>-->
